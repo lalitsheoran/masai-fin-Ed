@@ -5,7 +5,7 @@ Lorem Ipsum ( Lalit Sheoran &amp; Manish Sharma)
 
 A web application that provides financial education and promotes good financial habits through a game based investing experience.
 
-Hosted on Netlify with continous integration : [Click here](masai-fin-ed.netlify.app)
+Hosted on Netlify with continous integration : [Click here](https://masai-fin-ed.netlify.app)
 
 
 
