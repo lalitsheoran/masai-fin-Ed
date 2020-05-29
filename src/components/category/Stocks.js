@@ -22,10 +22,10 @@ class Stocks extends React.Component{
         })
     }
     addInput=()=>{
-        if(this.props.amount-this.state.input>=0 && this.props.flag==false){
+        if(this.state.input>0 && this.props.amount-this.state.input>=0 && this.props.flag==false){
             let newInput=(this.state.input*Number(this.state.perc)*this.props.time).toFixed(2)
             let obj=[
-                {'InvST':[this.state.input,newInput]},
+                {'Stocks':[this.state.input,newInput]},
                 this.props.amount-this.state.input
                 ]
                 alert("Investment done !")
@@ -70,7 +70,7 @@ const mapStateToProps = (state) => {
     return{
         amount:state.amount,
         time:state.time,
-        flag:state.invFlags.InvST
+        flag:state.invFlags.Stocks
     }
 }
 

@@ -14,10 +14,10 @@ class Gold extends React.Component{
             [e.target.name]:e.target.value
         })
     }
-    addInput=()=>{if(this.props.amount-this.state.input>=0 && this.props.flag==false){
+    addInput=()=>{if(this.state.input>0 && this.props.amount-this.state.input>=0 && this.props.flag==false){
         let newInput=(this.state.input*1.2*this.props.time).toFixed(2)
         let obj=[
-            {'InvGD':[this.state.input,newInput]},
+            {'Gold':[this.state.input,newInput]},
             this.props.amount-this.state.input
             ]
             alert("Investment done !")
@@ -57,7 +57,7 @@ const mapStateToProps = (state) => {
     return{
         amount:state.amount,
         time:state.time,
-        flag:state.invFlags.InvGD
+        flag:state.invFlags.Gold
     }
 }
 

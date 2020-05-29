@@ -15,10 +15,10 @@ class PPF extends React.Component{
         })
     }
     addInput=()=>{
-        if(this.props.amount-this.state.input>=0 && this.props.flag==false){
+        if(this.state.input>0 && this.props.amount-this.state.input>=0 && this.props.flag==false){
             let newInput=(this.state.input*1.2*this.props.time).toFixed(2)
             let obj=[
-                {'InvPPF':[this.state.input,newInput]},
+                {'PPF':[this.state.input,newInput]},
                 this.props.amount-this.state.input
                 ]
                 alert("Investment done !")
@@ -59,7 +59,7 @@ const mapStateToProps = (state) => {
     return{
         amount:state.amount,
         time:state.time,
-        flag:state.invFlags.InvPPF
+        flag:state.invFlags.PPF
     }
 }
 

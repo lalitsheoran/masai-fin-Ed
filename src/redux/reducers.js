@@ -8,7 +8,7 @@ var initialState={
     userDetails:{},
     currentInv:{},
     totalInv:[],
-    invFlags:{InvRS:false,InvSA:false,InvST:false,InvPPF:false,InvMF:false,InvDB:false,InvGD:false,InvFD:false}
+    invFlags:{Real_Estate:false,Savings_Account:false,Stocks:false,PPF:false,Mutual_Funds:false,Debentures:false,Gold:false,Fixed_Deposit:false}
 }
 
 export const reducers=(state=initialState,action)=>{
@@ -25,7 +25,7 @@ export const reducers=(state=initialState,action)=>{
         case INV_DONE:
             let list=state.totalInv
             let flags2=state.invFlags
-            flags2={InvRS:false,InvSA:false,InvST:false,InvPPF:false,InvMF:false,InvDB:false,InvGD:false,InvFD:false}
+            flags2={Real_Estate:false,Savings_Account:false,Stocks:false,PPF:false,Mutual_Funds:false,Debentures:false,Gold:false,Fixed_Deposit:false}
             return {...state,totalInv:[...list,action.payload],currentInv:{},timeFlag:false,invFlags:flags2}
         case TIME:
             return {...state,time:action.payload,timeFlag:true}

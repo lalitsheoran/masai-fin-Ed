@@ -15,18 +15,52 @@ class Categories extends React.Component {
     constructor(props) {
         super(props)
         this.state={
-            InvRE: this.props.currentInv.InvRE ||[0,0],
-            InvGD: this.props.currentInv.InvGD ||[0,0],
-            InvMF: this.props.currentInv.InvMF ||[0,0] ,
-            InvST: this.props.currentInv.InvST ||[0,0],
-            InvDB: this.props.currentInv.InvDB ||[0,0],
-            InvPPF: this.props.currentInv.InvPPF ||[0,0] ,
-            InvFD: this.props.currentInv.InvFD ||[0,0],
-            InvSA: this.props.currentInv.InvSA ||[0,0]
+          // Real_Estate: this.props.currentInv.Real_Estate ||[0,0],
+          // Gold: this.props.currentInv.Gold ||[0,0],
+          // Mutual_Funds: this.props.currentInv.Mutual_Funds ||[0,0] ,
+          // Stocks: this.props.currentInv.Stocks ||[0,0],
+          // Debentures: this.props.currentInv.Debentures ||[0,0],
+          // PPF: this.props.currentInv.PPF ||[0,0] ,
+          // Fixed_Deposit: this.props.currentInv.Fixed_Deposit ||[0,0],
+          // Savings_Account: this.props.currentInv.Savings_Account ||[0,0]
         }
     }
     addToTotal=()=>{
-        this.props.invDone(this.state)
+        let data=[
+          {
+            name:"Real Estate",
+            data:this.props.currentInv.Real_Estate ||[0,0]
+          },
+          {
+            name:"Gold",
+            data:this.props.currentInv.Gold ||[0,0]
+          },
+          {
+            name:"Mutual Funds",
+            data:this.props.currentInv.Mutual_Funds ||[0,0]
+          },
+          {
+            name:"Stocks",
+            data:this.props.currentInv.Stocks ||[0,0]
+          },
+          {
+            name:"Debentures",
+            data:this.props.currentInv.Debentures ||[0,0]
+          },
+          {
+            name:"PPF",
+            data:this.props.currentInv.PPF ||[0,0]
+          },
+          {
+            name:"Fixed Deposit",
+            data:this.props.currentInv.Fixed_Deposit ||[0,0]
+          },
+          {
+            name:"Savings Account",
+            data:this.props.currentInv.Savings_Account ||[0,0]
+          }
+        ]
+        this.props.invDone(data)
         this.props.history.push('/result')
     }
     render() {

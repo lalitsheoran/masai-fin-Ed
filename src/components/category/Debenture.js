@@ -22,10 +22,10 @@ class Debenture extends React.Component{
         })
     }
     addInput=()=>{
-        if(this.props.amount-this.state.input>=0 && this.props.flag==false){
+        if(this.state.input>0 && this.props.amount-this.state.input>=0 && this.props.flag==false){
             let newInput=(this.state.input*Number(this.state.perc)*this.props.time).toFixed(2)
             let obj=[
-                {'InvDB':[this.state.input,newInput]},
+                {'Debentures':[this.state.input,newInput]},
                 this.props.amount-this.state.input
                 ]
                 alert("Investment done !")
@@ -60,7 +60,7 @@ const mapStateToProps = (state) => {
     return{
         amount:state.amount,
         time:state.time,
-        flag:state.invFlags.InvDB
+        flag:state.invFlags.Debentures
     }
 }
 
